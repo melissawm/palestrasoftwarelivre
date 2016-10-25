@@ -1,118 +1,72 @@
 % Para compilar, use:
-% pdflatex -shell-escape melissa_kthxbai.tex
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% pdflatex -shell-escape softwarelivre.tex
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 % PREAMBULO
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%
+% Opções do beamer
 \documentclass{beamer}
-% Temas do beamer
 \usetheme{Boadilla}
-%\usecolortheme{purple}
+
 \usefonttheme[onlysmall]{structurebold}
+\setbeamerfont{frametitle}{family=\bfseries}
+\setbeamerfont{title}{family=\bfseries}
+
 \usenavigationsymbolstemplate{}
-%\useoutertheme{smoothbars}
+
 % This Charming Man palette from colorlovers.com
 \definecolor{purple}{rgb}{0.5,0,0.5}
-% Escolhendo as cores padrão do beamer
+% Aqui você pode escolher as cores padrão para as estruturas do beamer
 %\setbeamercolor{normal text}{fg=winterbland}
 \setbeamercolor{structure}{fg=purple}
 %\setbeamercolor{block title}{fg=lazereyes}
 %\setbeamercolor{block body}{}
 \setbeamercolor{alerted text}{fg=purple}
 \setbeamercolor{frametitle}{fg=purple}
-% % Customizações
-% \setbeamertemplate{title page}
-% {%
-%    \vspace{2cm}
-%    \begin{center}
-%       \begin{minipage}{0.9\textwidth}
-%          \begin{alertblock}{}
-%             \vspace{0.5cm}
-%             \begin{center}
-%                \huge{\alert{\inserttitle}}
-%             \end{center}
-%             \vspace{0.5cm}
-%          \end{alertblock}
-%       \end{minipage}
-%    \end{center}
-%    \vspace{1cm}
-%    \begin{center}
-%       \large{\insertauthor}\\
-%    \end{center}
-%    \vspace{1cm}
-%    \begin{flushright}
-%       \small{\insertdate}
-%    \end{flushright}
-% }
-% \setbeamertemplate{footline}
-% {%
-%    \flushright{\insertframenumber / \inserttotalframenumber}
-%    \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,right]{}
-%    \end{beamercolorbox}
-% }
-% \pgfdeclarehorizontalshading[frametitle.bg,frametitle right.bg]{beamer@frametitleshade}{\paperheight}{%
-%   color(0pt)=(frametitle.bg);
-%   color(\paperwidth)=(frametitle right.bg)}
-% \AtBeginDocument%
-% {
-%   \pgfdeclareverticalshading{beamer@topshade}{\paperwidth}{%
-%     color(0pt)=(bg);
-%     color(4pt)=(black!50!bg)}
-%   \pgfdeclareverticalshading{beamer@bottomshade}{\paperwidth}{%
-%      color(0pt)=(black!50!bg);
-%      color(4pt)=(bg)}
-% }
-% \addtobeamertemplate{headline}
-% {}
-% {%
-%   \vskip-0.2pt
-%   \pgfuseshading{beamer@topshade}
-%   \vskip-2pt
-% }
-% \addtobeamertemplate{footline}
-% {}
-% {%
-%   \vskip-2pt
-%   \pgfuseshading{beamer@bottomshade}
-% }
-\setbeamerfont{frametitle}{family=\bfseries}
-\setbeamerfont{title}{family=\bfseries}
+
 \AtBeginSection{\frame{\tableofcontents[currentsection,hideallsubsections]}}
-%
+%%%%%%%%%%
+
+
+%%%%%%%%%%
 % Pacotes adicionais
 \usepackage[utf8]{inputenc} % Para permitir a exibição correta de acentos
 \usepackage[portuguese]{babel} % Para exibir palavras-chave em português
 \usepackage{txfonts} % Fontes bonitas :)
 \usepackage{ctable}
-\usepackage{colortbl}
+%\usepackage{colortbl}
+%%%%%%%%%%
 
 % Variáveis da apresentação
-\title{Software Livre na Matemática}
+\title{Software Livre\\Passado, Presente e Futuro}
 \author{Melissa Weber Mendonça}
-\date{}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\date{SECCOM 2016}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % FIM DO PREAMBULO
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{document}
 
-{% Definindo frame de título.
+{% Definindo slide de título.
 \setbeamertemplate{footline}{} 
 \setbeamertemplate{headline}{}
-% \usebackgroundtemplate{\includegraphics[width=\paperwidth,height=\paperheight]{imagens/linus.jpg}}%
 \begin{frame}%
-
-   \titlepage%
-   
+   \titlepage
 \end{frame}%
- }
+}
 
+% Slide 1
 \begin{frame}
    \frametitle{O que é \emph{Software Livre}?}
    \begin{center}
-     \includegraphics[width=\textwidth]{gnu_free.png}
+     \includegraphics[width=\textwidth]{images/gnu_free.png}
    \end{center}
 \end{frame}
 
+% Slide 2
 \begin{frame}
    \frametitle{Richard Stallman e o Manifesto GNU}
    \begin{columns}
@@ -123,7 +77,7 @@
      \end{itemize}
      \column{4.5cm}
      \begin{center}
-       \includegraphics[width=4.5cm,trim=40mm 0mm 40mm 0mm,clip]{stallman.jpg}\\
+       \includegraphics[width=4.5cm,trim=40mm 0mm 40mm 0mm,clip]{images/stallman.jpg}\\
        rms
      \end{center}
    \end{columns}
@@ -132,6 +86,7 @@
    \end{center}
 \end{frame}
 
+% Slide 3
 \begin{frame}
   \frametitle{As liberdades}
   \begin{block}{}
@@ -144,6 +99,7 @@
   \end{block}
 \end{frame}
 
+% Slide 4
 \begin{frame}
    \frametitle{\emph{``Free as in beer''} vs. \emph{``Free as in speech''}}
    \begin{center}
@@ -155,8 +111,11 @@
        \end{block}
      \end{minipage}
    \end{center}
+   \vfill 
+   "Free software is software that gives you the user the freedom to share, study and modify it. We call this free software because \textbf{the user is free}." \textemdash\ FSF
 \end{frame}
 
+% Slide 5
 \begin{frame}
    \frametitle{Licenças Livres}
    \begin{itemize}
@@ -167,15 +126,16 @@
    \begin{columns}
      \column{4cm}
      \begin{center}
-       \includegraphics[width=3cm]{copyleft.png}
+       \includegraphics[width=3cm]{images/copyleft.png}
      \end{center}
      \column{7cm}
      \begin{center}
-       \includegraphics[width=5cm]{GPLv3_Logo.png}
+       \includegraphics[width=5cm]{images/GPLv3_Logo.png}
      \end{center}
  \end{columns}
 \end{frame}
 
+% Slide 6
 \begin{frame}
   \frametitle{Licenças Livres}
   \begin{itemize}
@@ -185,23 +145,25 @@
   \item Microsoft Public License (Ms-PL)
   \item Mozilla Public License (MPL)
   \item Domínio Público
-  %\item The GPL-PA (“Licença Pública Geral para Administração Pública”) não é free
+  \item Creative Commons
   \end{itemize}
 \end{frame}
 
-\begin{frame}
-  \frametitle{Creative Commons}
-  Para trabalho artístico ou criativo (fotos, imagens, música, produção literária...)
-  \begin{itemize}
-  \item CC BY: Atribuição; trabalho pode ser modificado e a modificação pode ser usada comercialmente;
-  \item CC BY-SA: CC BY + deve manter a mesma licença do original (copyleft);
-  \item CC BY-ND: Atribuição; trabalho pode ser comercializado e redistribuído, mas sem modificações;
-  \item CC BY-NC: Atribuição; trabalho pode ser modificado e redistribuído, não comercialmente.
-  \item CC BY-NC-SA
-  \item CC BY-NC-ND
-  \end{itemize}
-\end{frame}
+% Slide 7 - não usado na SECCOM
+% \begin{frame}
+%   \frametitle{Creative Commons}
+%   Para trabalho artístico ou criativo (fotos, imagens, música, produção literária...)
+%   \begin{itemize}
+%   \item CC BY: Atribuição; trabalho pode ser modificado e a modificação pode ser usada comercialmente;
+%   \item CC BY-SA: CC BY + deve manter a mesma licença do original (copyleft);
+%   \item CC BY-ND: Atribuição; trabalho pode ser comercializado e redistribuído, mas sem modificações;
+%   \item CC BY-NC: Atribuição; trabalho pode ser modificado e redistribuído, não comercialmente.
+%   \item CC BY-NC-SA
+%   \item CC BY-NC-ND
+%   \end{itemize}
+% \end{frame}
 
+% Slide 8
 \begin{frame}
    \frametitle{Open Source vs. Free Software}
    \begin{columns}
@@ -209,16 +171,17 @@
      \begin{center}
      Todo software livre é \emph{open source} (código aberto) mas nem todo código aberto é software livre!\\
      \vskip2cm
-     \includegraphics[width=2cm]{osi-logo.png}
+     \includegraphics[width=2cm]{images/osi-logo.png}
    \end{center}
    \column{3cm}
    \begin{center}
-     \includegraphics[width=3cm]{esr.jpg}\\
+     \includegraphics[width=3cm]{images/esr.jpg}\\
      Eric S. Raymond (1998)
    \end{center}
  \end{columns}
 \end{frame}
 
+% Slide 9
 \begin{frame}
   \frametitle{GNU/Linux}
   \begin{center}
@@ -236,65 +199,36 @@
       system (just a hobby, won’t be big and professional like gnu)...''
     \column{3cm}
     \begin{center}
-      \includegraphics[width=3cm]{linus.jpg}\\
+      \includegraphics[width=3cm]{images/linus.jpg}\\
       Linus Torvalds\\
       (1991-1992)
     \end{center}
   \end{columns}
 \end{frame}
 
+% Slide 10 - acrescentei manjaro
 \begin{frame}
    \frametitle{\emph{Distros}}
    \begin{center}
      \renewcommand\arraystretch{2}
      \begin{tabular}{c c c}
-       \includegraphics[width=3cm]{ubuntu.png} & \includegraphics[width=3cm]{opensuse.png} & \includegraphics[width=3cm]{mint.jpg}\\
-       \includegraphics[width=3cm,trim=10mm 60mm 10mm 60mm,clip]{fedora.jpg} & \includegraphics[width=3cm]{debian.png} & \includegraphics[width=3cm]{arch.png}\\
-       \includegraphics[width=3cm]{slack.png} & \includegraphics[width=3cm]{redhat.jpg} & \includegraphics[width=3cm]{chakra.png}
+       \includegraphics[width=3cm]{images/ubuntu.png} & \includegraphics[width=3cm]{images/opensuse.png} & \includegraphics[width=3cm]{images/mint.jpg}\\
+       \includegraphics[width=3cm,trim=10mm 60mm 10mm 60mm,clip]{images/fedora.jpg} & \includegraphics[width=3cm]{images/debian.png} & \includegraphics[width=3cm]{images/arch.png}\\
+       \includegraphics[width=3cm]{images/slack.png} & \includegraphics[width=3cm]{images/redhat.jpg} & \includegraphics[width=3cm]{images/chakra.png}\\
+       \includegraphics[width=2cm]{images/Scientific_Linux_logo.png} & \includegraphics[width=3cm]{images/manjaro.png} & 
      \end{tabular}
    \end{center}
 \end{frame}
 
-\begin{frame}
-  \frametitle{}
-  \begin{center}
-    Ok, mas... E nós?
-  \end{center}
-\end{frame}
+% Slide 11 - não usado na SECCOM
+% \begin{frame}
+%   \frametitle{}
+%   \begin{center}
+%     Ok, mas... E nós?
+%   \end{center}
+% \end{frame}
 
-\begin{frame}
-  \frametitle{Cultura Hacker na Educação}
-  \begin{columns}
-    \column{8cm}
-    \begin{itemize}
-    \item Ética Hacker
-    \item Nelson Pretto (UFBA): ``Por uma cultura hacker na educação''
-    \end{itemize}
-    \column{3cm}
-    \includegraphics[width=3cm]{glider.png}
-  \end{columns}
-\end{frame}
-
-\begin{frame}
-   \frametitle{Open Science}
-   \begin{center}
-     \includegraphics[width=\textwidth]{openscience.png}
-   \end{center}
-\end{frame}
-
-\begin{frame}
-   \frametitle{Open Access}
-   \begin{columns}
-     \column{7cm}
-     \centering
-     Acesso livre a publicações científicas
-     \column{4cm}
-     \begin{center}
-       \includegraphics[width=2cm]{openaccess.png}
-     \end{center}
-   \end{columns}
-\end{frame}
-
+% Slide 12
 \begin{frame}
   \frametitle{Formatos Abertos}
   \begin{columns}
@@ -305,24 +239,96 @@
     \end{itemize}
     \column{4cm}
     \begin{center}
-      \includegraphics[width=3cm]{opendocumentformat.png}
+      \includegraphics[width=3cm]{images/opendocumentformat.png}
     \end{center}
   \end{columns}
 \end{frame}
 
+% Slide 13
 \begin{frame}
-   \frametitle{Softwares Matemáticos Livres}
+  \frametitle{Cultura Hacker na Educação}
+  \begin{columns}
+    \column{8cm}
+    \begin{itemize}
+    \item Ética Hacker
+    \item Nelson Pretto (UFBA): ``Por uma cultura hacker na educação''
+    \end{itemize}
+    \column{3cm}
+    \includegraphics[width=3cm]{images/glider.png}
+  \end{columns}
+\end{frame}
+
+% Slide 14
+\begin{frame}
+   \frametitle{Open Science}
    \begin{center}
-     \begin{tabular}{l l}
-       \rowcolor{purple!30} MATLAB & \uncover<2->{Octave/Scilab/Python}\\
-       Photoshop & \uncover<3->{Inkscape/Gimp}\\
-       \rowcolor{purple!30} Word/Excel & \uncover<4->{LibreOffice (\LaTeX !)}\\
-       Geogebra & \uncover<5->{Geogebra :)}\\
-       \rowcolor{purple!30} Maple & \uncover<6>{Sage}
-     \end{tabular}
+     \includegraphics[width=\textwidth]{images/openscience.png}
    \end{center}
 \end{frame}
 
+% Slide 15
+\begin{frame}
+   \frametitle{Open Access/Open Knowledge/Open Data}
+   \begin{columns}
+     \column{4cm}
+     \begin{center}
+       \includegraphics[width=2cm]{images/openaccess.png}\\
+	\end{center}
+    \column{5cm}
+    \begin{center}
+	\includegraphics[width=4.5cm]{images/Open_Knowledge_logo.png}
+     \end{center}
+   \end{columns}
+\end{frame}
+
+% Slide 16 - novo (SECCOM)
+\begin{frame}
+  \frametitle{E o que a pirataria tem a ver com isso?}
+  \begin{itemize}
+  \item Copyright v. Copyleft
+  \end{itemize}
+  \vfill
+  \begin{center}
+    \begin{columns}
+      \column{2cm}
+      {\ }
+      \column{5cm}
+      \includegraphics[width=3cm]{images/Piratpartiet.png}
+      \column{6cm}
+      \includegraphics[width=3cm]{images/Rick_Falkvinge.jpg}
+    \end{columns}
+  \end{center}
+\end{frame}
+
+% Slide 17 - novo (SECCOM)
+\begin{frame}
+  \frametitle{Digital rights}
+  \begin{columns}
+    \column{4cm}
+    \begin{itemize}
+    \item Open Data
+    \item IoT
+    \end{itemize}
+    \column{4cm}
+    \includegraphics[width=4cm]{images/EFF_Logo.png}
+  \end{columns}
+\end{frame}
+
+% Slide 18 - não usado na SECCOM
+% \begin{frame}
+%    \frametitle{Softwares Matemáticos Livres}
+%    \begin{center}
+%      \begin{tabular}{l l}
+%        \rowcolor{purple!30} MATLAB & \uncover<2->{Octave/Scilab/Python}\\
+%        Photoshop & \uncover<3->{Inkscape/Gimp}\\
+%        \rowcolor{purple!30} Word/Excel & \uncover<4->{LibreOffice (\LaTeX !)}\\
+%        Geogebra & \uncover<5->{Geogebra :)}\\
+%        \rowcolor{purple!30} Maple & \uncover<6>{Sage}
+%      \end{tabular}
+%    \end{center}
+% \end{frame}
+
+% Slide 19
 \begin{frame}
    \frametitle{Comunidade}
    Todos podem contribuir!
@@ -335,18 +341,20 @@
    \end{itemize}
 \end{frame}
 
+% Slide 20
 \begin{frame}[fragile]
-   \frametitle{Contato}
-   \begin{center}
-      \begin{minipage}{0.7\textwidth}
+  \frametitle{Contato}
+  \begin{center}
+    \begin{minipage}{0.7\textwidth}
       \begin{block}{}
-         \begin{center}
-            \verb+@melissawm+\\
-            \verb+www.mtm.ufsc.br/~melissa+
-         \end{center}
+        \begin{center}
+          % \verb+@melissawm+\\
+          \verb+www.mtm.ufsc.br/~melissa+
+          \verb+melissa.mendonca@ufsc.br+
+        \end{center}
       \end{block}
-   \end{minipage}
-   \end{center}
+    \end{minipage}
+  \end{center}
 \end{frame}
 
 \end{document}
